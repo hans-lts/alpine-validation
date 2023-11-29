@@ -1,0 +1,45 @@
+{
+  "name": "alpine-validation",
+  "version": "0.1.0",
+  "description": "A small plugin to expose Livewire validation messages in AlpineJs",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -c -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hans-lts/alpine-validation/"
+  },
+  "keywords": [
+    "AlpineJs",
+    "Livewire",
+    "Laravel",
+    "plugin"
+  ],
+  "author": {
+    "name": "Hans Link",
+    "url": "https://hanslink.dev/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hans-lts/alpine-validation/issues"
+  },
+  "homepage": "https://github.com/hans-lts/alpine-validation#readme",
+  "devDependencies": {
+    "@babel/core": "^7.17.2",
+    "@babel/preset-env": "^7.16.11",
+    "rollup": "^2.67.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-filesize": "^10.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^7.0.2"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "src/index.js",
+    "package.json",
+    "dist"
+  ]
+}
