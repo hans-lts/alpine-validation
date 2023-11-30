@@ -26,11 +26,9 @@ Then initialize it in your application along with any other Alpine plugins:
 
 ```js
 import Alpine from 'alpinejs';
-import { GlobalStore, LocalStore } from 'hans-link/alpine-validation';
+import ValidationErrors from 'hans-link/alpine-validation';
 
-// You can choose to use one or both strategies
-Alpine.plugin(GlobalStore);
-Alpine.plugin(LocalStore);
+Alpine.plugin(ValidationErrors);
 
 Alpine.start();
 ```
@@ -38,8 +36,6 @@ Alpine.start();
 ## Usage
 
 There are two strategies that can be used to access and display the validation errors: either through a global error store or on a component-by-component basis.
-
-## Component Store Strategy
 
 Adding the `x-wire-errors` directive to the root element of your Livewire component will grant you access to your component's validation errors with the following helpers:
 
