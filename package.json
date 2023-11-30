@@ -1,6 +1,6 @@
 {
   "name": "wire-validation",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A small plugin to expose Livewire validation messages in AlpineJs",
   "main": "src/index.js",
   "scripts": {
