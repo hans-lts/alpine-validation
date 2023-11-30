@@ -7,12 +7,12 @@ export default {
     input: 'builds/cdn.js',
     output: [
         {
-            file: 'dist/alpine-validation.js',
+            file: 'dist/wire-validation.js',
             format: 'umd',
             sourcemap: true,
         },
         {
-            file: 'dist/alpine-validation.min.js',
+            file: 'dist/wire-validation.min.js',
             format: 'umd',
             plugins: [terser()],
             sourcemap: true,
