@@ -19,14 +19,14 @@ See [Alpine installation](https://alpinejs.dev/essentials/installation) instruct
 You can install the plugin from NPM with the following command:
 
 ```shell
-npm install hans-link/wire-validation
+npm install wire-validation
 ```
 
 Then initialize it in your application along with any other Alpine plugins:
 
 ```js
 import Alpine from 'alpinejs';
-import ValidationErrors from 'hans-link/wire-validation';
+import ValidationErrors from 'wire-validation';
 
 Alpine.plugin(ValidationErrors);
 
