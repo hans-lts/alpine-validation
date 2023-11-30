@@ -1,6 +1,5 @@
-import { localValidation, globalValidation } from '../src/index.js';
+import ComponentErrors from '../src/index.js';
 
 document.addEventListener('alpine:init', () => {
-    localValidation(window.Alpine);
-    globalValidation(window.Alpine);
+    ComponentErrors(window.Alpine);
 });
