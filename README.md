@@ -2,6 +2,10 @@
 
 The purpose of this plugin is to make Livewire validation results easily accessible through AlpineJs.
 
+## Livewire compatibility
+
+This package is compatible with Livewire v2 and v3. It has not been tested on v1.
+
 ## Installation
 
 ### CDN
