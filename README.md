@@ -9,7 +9,7 @@ The purpose of this plugin is to make Livewire validation results easily accessi
 Include the following `<script>` tag in the `<head>` of your application layout. The script tag must be added **before** the Alpine scripts.
 
 ```html
-<script defer src="https://cdn.jsdelivr.net/npm/hans-link/wire-validation@latest/dist/wire-validation.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/wire-validation@latest/dist/wire-validation.min.js"></script>
 ```
 
 See [Alpine installation](https://alpinejs.dev/essentials/installation) instructions for more info.
