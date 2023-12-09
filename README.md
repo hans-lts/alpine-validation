@@ -28,6 +28,8 @@ npm install wire-validation
 
 Then initialize it in your application along with any other Alpine plugins:
 
+#### Livewire v2
+
 ```js
 import Alpine from 'alpinejs';
 import ValidationErrors from 'wire-validation';
@@ -35,6 +37,17 @@ import ValidationErrors from 'wire-validation';
 Alpine.plugin(ValidationErrors);
 
 Alpine.start();
+```
+
+#### Livewire v3
+
+```js
+import { Livewire, Alpine } from '../../vendor/livewire/livewire/dist/livewire.esm';
+import ValidationErrors from 'wire-validation';
+
+Alpine.plugin(ValidationErrors);
+ 
+Livewire.start()
 ```
 
 ## Usage
