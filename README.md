@@ -2,7 +2,7 @@
 
 The purpose of this plugin is to make Livewire validation results easily accessible through AlpineJs.
 
-## Livewire compatibility
+### Livewire compatibility
 
 This package is compatible with Livewire v2 and v3. It has not been tested on v1.
 
@@ -28,6 +28,8 @@ npm install wire-validation
 
 Then initialize it in your application along with any other Alpine plugins:
 
+#### Livewire v2
+
 ```js
 import Alpine from 'alpinejs';
 import ValidationErrors from 'wire-validation';
@@ -35,6 +37,17 @@ import ValidationErrors from 'wire-validation';
 Alpine.plugin(ValidationErrors);
 
 Alpine.start();
+```
+
+#### Livewire v3
+
+```js
+import { Livewire, Alpine } from '../../vendor/livewire/livewire/dist/livewire.esm';
+import ValidationErrors from 'wire-validation';
+
+Alpine.plugin(ValidationErrors);
+ 
+Livewire.start()
 ```
 
 ## Usage
@@ -156,6 +169,12 @@ If you wanted to reach over to another `x-wire-errors` Livewire component you ca
 The first parameter is an HTML element id and the second optional parameter is the desired wire model filter (same rules apply - emtpy, wildcard, etc).
 
 You can leverage this to quickly check on another component when your Livewire component depends on another's error state.
+
+### Example projects
+
+If you'd like to see the example projects check out the repos:
+ - [Livewire v2](https://github.com/hans-lts/alpine-validation-example)
+ - [Livewire v3](https://github.com/hans-lts/alpine-validation-example/tree/livewire-v3)
 
 ## License
 
