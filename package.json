@@ -1,7 +1,8 @@
 {
   "name": "wire-validation",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A small plugin to expose Livewire validation messages in AlpineJs",
+  "jsdelivr": "dist/wire-validation.min.js",
   "main": "src/index.js",
   "scripts": {
     "build": "rollup -c",
