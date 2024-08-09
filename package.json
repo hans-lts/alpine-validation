@@ -1,6 +1,6 @@
 {
   "name": "wire-validation",
-  "version": "0.1.4",
+  "version": "1.0.1",
   "description": "A small plugin to expose Livewire validation messages in AlpineJs",
   "main": "src/index.js",
   "scripts": {
@@ -12,9 +12,11 @@
     "url": "git+https://github.com/hans-lts/alpine-validation/"
   },
   "keywords": [
+    "Alpine",
     "AlpineJs",
     "Livewire",
     "Laravel",
+    "validation",
     "plugin"
   ],
   "author": {

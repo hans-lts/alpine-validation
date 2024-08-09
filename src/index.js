@@ -1,4 +1,4 @@
-function bindComponent(el, Alpine) {
+export function bindComponent(el, Alpine) {
     Alpine.bind(el, {
         'x-data'() {
             return {
@@ -45,7 +45,7 @@ function bindComponent(el, Alpine) {
     })
 }
 
-function bindLivewireV2Hook() {
+export function bindLivewireV2Hook() {
     Livewire.hook('message.processed', (message, component) => {
         let alpineComponent = Alpine.$data(component.el);
 
@@ -53,10 +53,10 @@ function bindLivewireV2Hook() {
         if (alpineComponent.processValidation) {
             alpineComponent.processValidation(message.response.serverMemo.errors);
         }
-    })
+    });
 }
 
-function bindLivewireV3Hook() {
+export function bindLivewireV3Hook() {
     Livewire.hook('commit', ({component, commit, respond, succeed, fail}) => {
         succeed(({snapshot, effect}) => {
             let alpineComponent = Alpine.$data(component.el);
@@ -65,17 +65,13 @@ function bindLivewireV3Hook() {
                 alpineComponent.processValidation(JSON.parse(snapshot).memo.errors);
             }
         })
-    })
+    });
 }
 
 export default function (Alpine) {
-    // Ensure the hook is loaded on every page
-    document.addEventListener("DOMContentLoaded", () => {
-        // Bind the proper Livewire version hook
-        (Livewire.components?.hooks !== undefined) ? 
+    (Livewire.components?.hooks !== undefined) ? 
         bindLivewireV2Hook() : 
         bindLivewireV3Hook();
-    });
 
     Alpine.directive('wire-errors', (el, { modifiers }, { Alpine }) => {
         bindComponent(el, Alpine);

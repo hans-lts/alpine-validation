@@ -1,5 +1,5 @@
 import ComponentErrors from '../src/index.js';
 
 document.addEventListener('alpine:init', () => {
-    ComponentErrors(window.Alpine);
-});
+    window.Alpine.plugin(ComponentErrors)
+})

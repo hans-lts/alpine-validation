@@ -46,18 +46,37 @@
         }
       });
     }
-    function ComponentErrors (Alpine) {
-      // Ensure the hook is loaded on every page
-      document.addEventListener("DOMContentLoaded", () => {
-        Livewire.hook('message.processed', (message, component) => {
-          let alpineComponent = Alpine.$data(component.el);
+    function bindLivewireV2Hook() {
+      Livewire.hook('message.processed', (message, component) => {
+        let alpineComponent = Alpine.$data(component.el);
 
-          // Make sure we aren't going to call an invalid alpine component
+        // Make sure we aren't going to call an invalid alpine component
+        if (alpineComponent.processValidation) {
+          alpineComponent.processValidation(message.response.serverMemo.errors);
+        }
+      });
+    }
+    function bindLivewireV3Hook() {
+      Livewire.hook('commit', ({
+        component,
+        commit,
+        respond,
+        succeed,
+        fail
+      }) => {
+        succeed(({
+          snapshot,
+          effect
+        }) => {
+          let alpineComponent = Alpine.$data(component.el);
           if (alpineComponent.processValidation) {
-            alpineComponent.processValidation(message.response.serverMemo.errors);
+            alpineComponent.processValidation(JSON.parse(snapshot).memo.errors);
           }
         });
       });
+    }
+    function ComponentErrors (Alpine) {
+      Livewire.components?.hooks !== undefined ? bindLivewireV2Hook() : bindLivewireV3Hook();
       Alpine.directive('wire-errors', (el, {
         modifiers
       }, {
@@ -87,7 +106,7 @@
     }
 
     document.addEventListener('alpine:init', () => {
-      ComponentErrors(window.Alpine);
+      window.Alpine.plugin(ComponentErrors);
     });
 
 }));
